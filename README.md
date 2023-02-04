@@ -1,3 +1,17 @@
+# Password Generator with Rust
+
+A script to create random passwords.
+
+## Dependencies (Cargo.toml)
+
+```
+[dependencies]
+rand = "0.8.5"
+```
+
+## Code
+
+```
 use rand::prelude::*;
 
 fn main() {
@@ -28,3 +42,18 @@ fn generate_password(has_numbers: bool, has_cap_letters: bool, has_symbols: bool
     let mut rng = thread_rng();
     (0..lenght).map(|_| *possible_chars.choose(&mut rng).unwrap()).collect()
 }
+```
+
+## Output
+
+```
+password_generator_rust on  main [!] is 📦 v0.1.0 via 🦀 v1.65.0 
+❯ cargo run
+    Blocking waiting for file lock on build directory
+   Compiling password_generator_rust v0.1.0 (/home/deimos/Software dev/Rust/Project/password_generator_rust)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.61s
+     Running `target/debug/password_generator_rust`
+Password: nearzjyz
+Password: ajrnosOMGHSMFGt4
+Password: KzVRQ!qg8eiUizb82zpo!w85
+```
